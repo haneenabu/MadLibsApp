@@ -9,16 +9,24 @@
         android:id="@+id/imageView"
         android:src="@drawable/background"
         android:scaleType="centerCrop" />
-
-    <TextView
-        android:id="@+id/resultTextView"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Your Mad Libs Result"
-        android:textSize="36sp"
-        android:textColor="@color/primary_text"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="247dp" />
+        android:scrollbars="vertical"
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Your Mad Libs Result"
+            android:textSize="36sp"
+            android:textColor="@color/primary_text"
+            tools:layout_editor_absoluteX="126dp"
+            tools:layout_editor_absoluteY="247dp"/>
+
+    </ScrollView>
+
 </RelativeLayout>

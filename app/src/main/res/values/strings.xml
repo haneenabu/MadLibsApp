@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MadLIbs</string>
+    <string name="banner">Mad Libs App</string>
+    <string name="noun">Noun</string>
 </resources>

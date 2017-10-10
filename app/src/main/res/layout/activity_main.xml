@@ -15,10 +15,11 @@
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="24sp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
         android:layout_marginEnd="102dp"
         android:layout_marginTop="17dp"
-        android:id="@+id/textView" />
+        android:id="@+id/textView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/noun1"
@@ -27,15 +28,21 @@
         android:hint="Noun"
         android:layout_marginTop="17dp"
         android:layout_below="@+id/noun2"
-        android:layout_alignStart="@+id/noun2" />
+        android:layout_alignStart="@+id/noun2"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/icons"/>
+
     <EditText
         android:id="@+id/noun2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Noun"
-        android:layout_marginTop="18dp"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:layout_centerVertical="true"
+        android:hint="Noun"
+        android:background="@color/icons"/>
     <EditText
         android:id="@+id/noun3"
         android:layout_width="wrap_content"
@@ -43,14 +50,18 @@
         android:hint="Noun"
         android:layout_marginTop="12dp"
         android:layout_below="@+id/noun1"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/icons"/>
     <EditText
         android:id="@+id/adj"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Adjective"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:background="@color/icons"
+        android:layout_below="@+id/noun3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp" />
     <EditText
         android:id="@+id/verb"
         android:layout_width="wrap_content"
@@ -58,11 +69,15 @@
         android:hint="Verb"
         android:layout_marginTop="13dp"
         android:layout_below="@+id/adj"
-        android:layout_alignStart="@+id/noun3" />
+        android:layout_alignStart="@+id/noun3"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/icons"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="See Mad Libs"
+        android:background="@drawable/mybutton"
         android:id="@+id/submitMadLibsButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

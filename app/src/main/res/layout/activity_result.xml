@@ -18,7 +18,7 @@
         android:layout_centerVertical="true"
         android:text="Your Mad Libs Result"
         android:textSize="36sp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/primary_text"
         tools:layout_editor_absoluteX="126dp"
         tools:layout_editor_absoluteY="247dp" />
 </RelativeLayout>

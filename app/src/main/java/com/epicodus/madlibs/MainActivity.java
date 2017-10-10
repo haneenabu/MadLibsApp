@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.noun3) EditText noun3;
     @Bind(R.id.verb) EditText verb;
     @Bind(R.id.adj) EditText adjective;
+    @Bind(R.id.textView) TextView header;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
                 String verbOut = verb.getText().toString();
                 String adjOut = adjective.getText().toString();
 
-
+                if(noun1out.length() == 0|| noun2out.length() == 0|| noun3out.length() == 0|| verbOut.length() == 0|| adjOut.length() == 0){
+                    Toast.makeText(MainActivity.this, "All fields are required!", Toast.LENGTH_LONG).show();
+                } else {
                 Intent intent = new Intent(MainActivity.this, ResultActivity.class);
                 intent.putExtra("Noun1", noun1out);
                 intent.putExtra("Noun2", noun2out);
@@ -44,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("Adj", adjOut);
 
                 startActivity(intent);
+                }
             }
         });
     }

@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
@@ -59,9 +60,11 @@ public class MainActivityInstrumentationTest {
         onView(withId(R.id.noun1)).perform(typeText(noun1));
         onView(withId(R.id.noun2)).perform(typeText(noun2));
         onView(withId(R.id.noun3)).perform(typeText(noun3));
-        onView(withId(R.id.adj)).perform(typeText(adj));
+        onView(withId(R.id.adj)).perform(typeText(adj), closeSoftKeyboard());
         onView(withId(R.id.submitMadLibsButton)).perform(click());
-        onView(withText(R.string.toast)).inRoot(withDecorView(not(is(activityTestRule.getActivity().getWindow().getDecorView())))).check(matches(isDisplayed()));;
+        onView(withText("All fields are required!"))
+                .inRoot(withDecorView(not(activityTestRule.getActivity().getWindow().getDecorView())))
+                .check(matches(isDisplayed()));
     }
 
 

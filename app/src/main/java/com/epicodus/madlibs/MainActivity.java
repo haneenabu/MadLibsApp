@@ -13,9 +13,11 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Bind(R.id.submitMadLibsButton) Button mSubmitMadLibsButton;
+    @Bind(R.id.loginButton) Button mLoginButton;
+
     @Bind(R.id.noun1) EditText noun1;
     @Bind(R.id.noun2) EditText noun2;
     @Bind(R.id.noun3) EditText noun3;
@@ -29,18 +31,22 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        mSubmitMadLibsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                String noun1out = noun1.getText().toString();
-                String noun2out = noun2.getText().toString();
-                String noun3out = noun3.getText().toString();
-                String verbOut = verb.getText().toString();
-                String adjOut = adjective.getText().toString();
+        mSubmitMadLibsButton.setOnClickListener(this);
+        mLoginButton.setOnClickListener(this);
+    }
 
-                if(noun1out.length() == 0|| noun2out.length() == 0|| noun3out.length() == 0|| verbOut.length() == 0|| adjOut.length() == 0){
-                    Toast.makeText(MainActivity.this, "All fields are required!", Toast.LENGTH_LONG).show();
-                } else {
+    @Override
+    public void onClick(View view) {
+        if (view == mSubmitMadLibsButton){
+            String noun1out = noun1.getText().toString();
+            String noun2out = noun2.getText().toString();
+            String noun3out = noun3.getText().toString();
+            String verbOut = verb.getText().toString();
+            String adjOut = adjective.getText().toString();
+
+            if(noun1out.length() == 0|| noun2out.length() == 0|| noun3out.length() == 0|| verbOut.length() == 0|| adjOut.length() == 0){
+                Toast.makeText(MainActivity.this, "All fields are required!", Toast.LENGTH_LONG).show();
+            } else {
                 Intent intent = new Intent(MainActivity.this, ResultActivity.class);
                 intent.putExtra("Noun1", noun1out);
                 intent.putExtra("Noun2", noun2out);
@@ -49,8 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("Adj", adjOut);
 
                 startActivity(intent);
-                }
             }
-        });
+        }
+        else if(view == mLoginButton){
+            Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(loginIntent);
+
+        }
+
     }
 }

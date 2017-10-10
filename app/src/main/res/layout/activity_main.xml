@@ -74,13 +74,22 @@
         android:layout_centerHorizontal="true"
         android:background="@color/icons"/>
     <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="See Mad Libs"
+    android:background="@drawable/mybutton"
+    android:id="@+id/submitMadLibsButton"
+    android:layout_marginTop="92dp"
+    android:layout_below="@+id/verb"
+    android:layout_centerHorizontal="true" />
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="See Mad Libs"
+        android:text="LogIn"
         android:background="@drawable/mybutton"
-        android:id="@+id/submitMadLibsButton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="82dp" />
+        android:id="@+id/loginButton"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/submitMadLibsButton"
+        android:layout_alignEnd="@+id/submitMadLibsButton" />
 
 </RelativeLayout>
